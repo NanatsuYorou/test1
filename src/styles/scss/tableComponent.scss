@@ -124,13 +124,13 @@ tr{
 }
 
 @media (min-width: 1440px){
-    table, .table__header, .price, .button{
-        font-size: 22px;
+    table, .table__header, .button{
+        font-size: 18px;
     }
     .price{
-        padding-bottom: 15px;
+        padding-bottom: 10px;
     }
     .letter{
-        font-size: 26px;
+        font-size: 22px;
     }
 }
