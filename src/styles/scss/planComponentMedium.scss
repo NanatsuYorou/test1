@@ -1,0 +1,34 @@
+@media (min-width: 700px){
+    .plan{
+        &__container{
+            display: grid; 
+            padding: 15px 45px;
+            grid-template-columns: 2fr 1fr; 
+            grid-template-rows: 1fr 2fr; 
+            grid-template-areas: 
+              "title ."
+              "g_list footer";
+
+        }
+        &__title{
+            grid-area: title;
+        }
+        
+        &__footer{
+            flex-direction: column;
+            align-items: center;
+            grid-area: footer;
+            button {
+                margin-top: 15px;
+                max-width: 160px;
+            }
+        }
+    }
+    .pros__list{
+        grid-area: g_list;
+        padding: 10px 0 25px 0;
+    }
+    .personal{
+        display: none;
+    }
+}
