@@ -1,99 +1,128 @@
-import React from 'react'
-import '../styles/css/tableComponent.css'
+import React from "react";
+import stylesGrid from "../styles/css/tableGrid.module.css";
+import mainStyles from "../styles/css/main.module.css";
+import IndividualPlan from "./IndividualPlan";
 
 export default function TableComponent() {
   return (
-    <table>
-    <thead>
-        <tr>
-            <th className="first"></th>
-            <th colSpan="2">
-                <p className='table__header letter'>XS</p>
-                <p className='table__header'>Бесплатный доступ, чтобы запускать небольшие опросы от&nbsp;случая к&nbsp;случаю</p>
-            </th>
-            <th colSpan="2">
-                <p className='table__header letter'>M</p>
-                <p className='table__header'>Доступ на&nbsp;2&nbsp;месяца, чтобы начать проводить опросы регулярно</p>
-            </th>
-            <th colSpan="2">
-                <p className='table__header letter'>L</p>
-                <p className='table__header'>Доступ на&nbsp;год, чтобы постоянно собирать обратную связь и&nbsp;не&nbsp;думать о&nbsp;лимитах</p>
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td className="first">Количество ответов и&nbsp;дней доступа</td>
-            <td colSpan="2">До&nbsp;50&nbsp;ответов на&nbsp;30&nbsp;дней</td>
-            <td colSpan="2">До&nbsp;500 ответов на&nbsp;60&nbsp;дней</td>
-            <td colSpan="2">До&nbsp;10&nbsp;000 ответов на&nbsp;365 дней</td>
-        </tr>
-        <tr>
-            <td className="first">Анкета с&nbsp;нуля и&nbsp;готовые шаблоны</td>
-            <td colSpan="2" className='positive'></td>
-            <td colSpan="2" className='positive'></td>
-            <td colSpan="2" className='positive'></td>
-        </tr>
-        <tr>
-            <td className="first">Сложная логика опроса</td>
-            <td colSpan="2" className='positive'></td>
-            <td colSpan="2" className='positive'></td>
-            <td colSpan="2" className='positive'></td>
-        </tr>
-        <tr>
-            <td className="first">Отображение результатов без excel</td>
-            <td colSpan="2" className='positive'></td>
-            <td colSpan="2" className='positive'></td>
-            <td colSpan="2" className='positive'></td>
-        </tr>
-        <tr>
-            <td className="first">UTM-метки в&nbsp;ссылке на&nbsp;опрос</td>
-            <td colSpan="2" className='negative'></td>
-            <td colSpan="2" className='positive'></td>
-            <td colSpan="2" className='positive'></td>
-        </tr>
-        <tr>
-            <td className="first">Динамическая логика ответов</td>
-            <td colSpan="2" className='negative'></td>
-            <td colSpan="2">Май 2021</td>
-            <td colSpan="2">Май 2021</td>
-        </tr>
-        <tr>
-            <td className="first">Без логотипа в&nbsp;опросах</td>
-            <td colSpan="2" className='negative'></td>
-            <td colSpan="2" className='negative'></td>
-            <td colSpan="2">Май 2021</td>
-        </tr>
-        <tr>
-            <td className="first">Отправка писем</td>
-            <td colSpan="2" className='negative'></td>
-            <td colSpan="2" className='negative'></td>
-            <td colSpan="2">Июнь 2021</td>
-        </tr>
-        <tr>
-            <td className="first"></td>
-            <td colSpan="2">
-                <div className="btn__container">
-                    <p className='price'>0&nbsp;руб.</p>
-                    <button  className='button'>Создать опрос</button>
-                </div>
-            </td>
-            <td colSpan="2">
-                <div className="btn__container">
-                    <p className='price'>4&nbsp;000&nbsp;руб.</p>
-                    <p className='price month'>2&nbsp;000&nbsp;руб.</p>
-                    <button  className='button button_highlighted'>Оставить заявку</button>
-                </div>
-            </td>
-            <td colSpan="2">
-                <div className="btn__container">
-                    <p className='price'>20&nbsp;000&nbsp;руб.</p>
-                    <p className='price month'>1667 руб./месяц</p>
-                    <button className='button'>Оставить заявку</button>
-                </div>
-            </td>
-        </tr>
-    </tbody>
-  </table>
-  )
+    <>
+      <div className={stylesGrid.grid}>
+        <ul className={stylesGrid.pros}>
+          <li className={stylesGrid.li}>
+            Количество ответов и&nbsp;дней доступа
+          </li>
+          <li className={stylesGrid.li}>
+            Анкета с&nbsp;нуля и&nbsp;готовые шаблоны
+          </li>
+          <li className={stylesGrid.li}>Сложная логика опроса</li>
+          <li className={stylesGrid.li}>Отображение результатов без excel</li>
+          <li className={stylesGrid.li}>
+            UTM-метки в&nbsp;ссылке на&nbsp;опрос
+          </li>
+          <li className={stylesGrid.li}>Динамическая логика ответов</li>
+          <li className={stylesGrid.li}>Без логотипа в&nbsp;опросах</li>
+          <li className={stylesGrid.li}>Отправка писем</li>
+        </ul>
+        <div className={`${stylesGrid.xsTitle} ${stylesGrid.title}`}>
+          <p className={`${stylesGrid.table__header} ${stylesGrid.letter}`}>
+            XS
+          </p>
+          <p>
+            Бесплатный доступ, чтобы запускать небольшие опросы от&nbsp;случая
+            к&nbsp;случаю
+          </p>
+        </div>
+        <ul className={stylesGrid.xsUl}>
+          <li className={`${stylesGrid.li} ${stylesGrid.textCenter}`}>
+            До&nbsp;50&nbsp;ответов на&nbsp;30&nbsp;дней
+          </li>
+          <li className={`${stylesGrid.li} ${stylesGrid.positive}`} />
+          <li className={`${stylesGrid.li} ${stylesGrid.positive}`} />
+          <li className={`${stylesGrid.li} ${stylesGrid.positive}`} />
+          <li className={`${stylesGrid.li} ${stylesGrid.negative}`} />
+          <li className={`${stylesGrid.li} ${stylesGrid.negative}`} />
+          <li className={`${stylesGrid.li} ${stylesGrid.negative}`} />
+          <li className={`${stylesGrid.li} ${stylesGrid.negative}`} />
+        </ul>
+        <div className={`${stylesGrid.mTitle} ${stylesGrid.title}`}>
+          <p className={`${stylesGrid.table__header} ${stylesGrid.letter}`}>
+            M
+          </p>
+          <p className={stylesGrid.table__header}>
+            Доступ на&nbsp;2&nbsp;месяца, чтобы начать проводить опросы
+            регулярно
+          </p>
+        </div>
+        <ul className={stylesGrid.mUl}>
+          <li className={`${stylesGrid.li} ${stylesGrid.textCenter}`}>
+            <span>До&nbsp;500 ответов на&nbsp;60&nbsp;дней</span>
+          </li>
+          <li className={`${stylesGrid.li} ${stylesGrid.positive}`} />
+          <li className={`${stylesGrid.li} ${stylesGrid.positive}`} />
+          <li className={`${stylesGrid.li} ${stylesGrid.positive}`} />
+          <li className={`${stylesGrid.li} ${stylesGrid.positive}`} />
+          <li className={`${stylesGrid.li} ${stylesGrid.textCenter}`}>
+            Май 2021
+          </li>
+          <li className={`${stylesGrid.li} ${stylesGrid.negative}`} />
+          <li className={`${stylesGrid.li} ${stylesGrid.negative}`} />
+        </ul>
+        <div className={`${stylesGrid.lTitle} ${stylesGrid.title}`}>
+          <p className={`${stylesGrid.table__header} ${stylesGrid.letter}`}>
+            L
+          </p>
+          <p className={stylesGrid.table__header}>
+            Доступ на&nbsp;год, чтобы постоянно собирать обратную связь
+            и&nbsp;не&nbsp;думать о&nbsp;лимитах
+          </p>
+        </div>
+        <ul className={stylesGrid.lUl}>
+          <li className={`${stylesGrid.li} ${stylesGrid.textCenter}`}>
+            <span>До&nbsp;10&nbsp;000 ответов на&nbsp;365 дней</span>
+          </li>
+          <li className={`${stylesGrid.li} ${stylesGrid.positive}`} />
+          <li className={`${stylesGrid.li} ${stylesGrid.positive}`} />
+          <li className={`${stylesGrid.li} ${stylesGrid.positive}`} />
+          <li className={`${stylesGrid.li} ${stylesGrid.positive}`} />
+          <li className={`${stylesGrid.li} ${stylesGrid.textCenter}`}>
+            Май 2021
+          </li>
+          <li className={`${stylesGrid.li} ${stylesGrid.textCenter}`}>
+            Май 2021
+          </li>
+          <li className={`${stylesGrid.li} ${stylesGrid.textCenter}`}>
+            Июнь 2021
+          </li>
+        </ul>
+        <div className={`${stylesGrid.xsBtn} ${stylesGrid.btnContainer}`}>
+          <p className={stylesGrid.price}>0 руб.</p>
+          <button type="button" className={mainStyles.button}>
+            Создать опрос
+          </button>
+        </div>
+        <div className={`${stylesGrid.mBtn} ${stylesGrid.btnContainer}`}>
+          <p className={stylesGrid.price}>4 000 руб.</p>
+          <p className={stylesGrid.monthPrice}>2000 руб./месяц</p>
+          <button
+            type="button"
+            className={`${mainStyles.button} ${stylesGrid.button_highlighted}`}
+          >
+            Оставить заявку
+          </button>
+        </div>
+        <div className={`${stylesGrid.lBtn} ${stylesGrid.btnContainer}`}>
+          <p className={stylesGrid.price}>20 000 руб.</p>
+          <p className={stylesGrid.monthPrice}>1667 руб./месяц</p>
+          <button type="button" className={mainStyles.button}>
+            Оставить заявку
+          </button>
+        </div>
+      </div>
+      <IndividualPlan
+        title="Индивидуальный"
+        terms="Оставьте заявку, если вам нужен большой объем, API или готовая интеграция. Стоимость рассчитаем исходя из ваших задач."
+        buttonName="Оставить заявку"
+      />
+    </>
+  );
 }
