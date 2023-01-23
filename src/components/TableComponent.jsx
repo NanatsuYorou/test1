@@ -1,7 +1,7 @@
 import React from "react";
 import stylesGrid from "../styles/css/tableGrid.module.css";
-import mainStyles from "../styles/css/main.module.css";
 import IndividualPlan from "./IndividualPlan";
+import Button from "./Button";
 
 export default function TableComponent() {
   return (
@@ -24,9 +24,7 @@ export default function TableComponent() {
           <li className={stylesGrid.li}>Отправка писем</li>
         </ul>
         <div className={`${stylesGrid.xsTitle} ${stylesGrid.title}`}>
-          <p className={`${stylesGrid.table__header} ${stylesGrid.letter}`}>
-            XS
-          </p>
+          <p className={stylesGrid.letter}>XS</p>
           <p>
             Бесплатный доступ, чтобы запускать небольшие опросы от&nbsp;случая
             к&nbsp;случаю
@@ -45,15 +43,13 @@ export default function TableComponent() {
           <li className={`${stylesGrid.li} ${stylesGrid.negative}`} />
         </ul>
         <div className={`${stylesGrid.mTitle} ${stylesGrid.title}`}>
-          <p className={`${stylesGrid.table__header} ${stylesGrid.letter}`}>
-            M
-          </p>
+          <p className={stylesGrid.letter}>M</p>
           <p className={stylesGrid.table__header}>
             Доступ на&nbsp;2&nbsp;месяца, чтобы начать проводить опросы
             регулярно
           </p>
         </div>
-        <ul className={stylesGrid.mUl}>
+        <ul className={`${stylesGrid.mUl} ${stylesGrid.bigColumn}`}>
           <li className={`${stylesGrid.li} ${stylesGrid.textCenter}`}>
             <span>До&nbsp;500 ответов на&nbsp;60&nbsp;дней</span>
           </li>
@@ -68,9 +64,7 @@ export default function TableComponent() {
           <li className={`${stylesGrid.li} ${stylesGrid.negative}`} />
         </ul>
         <div className={`${stylesGrid.lTitle} ${stylesGrid.title}`}>
-          <p className={`${stylesGrid.table__header} ${stylesGrid.letter}`}>
-            L
-          </p>
+          <p className={stylesGrid.letter}>L</p>
           <p className={stylesGrid.table__header}>
             Доступ на&nbsp;год, чтобы постоянно собирать обратную связь
             и&nbsp;не&nbsp;думать о&nbsp;лимитах
@@ -96,26 +90,17 @@ export default function TableComponent() {
         </ul>
         <div className={`${stylesGrid.xsBtn} ${stylesGrid.btnContainer}`}>
           <p className={stylesGrid.price}>0 руб.</p>
-          <button type="button" className={mainStyles.button}>
-            Создать опрос
-          </button>
+          <Button caption="Оставить заявку" />
         </div>
         <div className={`${stylesGrid.mBtn} ${stylesGrid.btnContainer}`}>
           <p className={stylesGrid.price}>4 000 руб.</p>
           <p className={stylesGrid.monthPrice}>2000 руб./месяц</p>
-          <button
-            type="button"
-            className={`${mainStyles.button} ${stylesGrid.button_highlighted}`}
-          >
-            Оставить заявку
-          </button>
+          <Button caption="Оставить заявку" isBtnHighlighted />
         </div>
         <div className={`${stylesGrid.lBtn} ${stylesGrid.btnContainer}`}>
           <p className={stylesGrid.price}>20 000 руб.</p>
           <p className={stylesGrid.monthPrice}>1667 руб./месяц</p>
-          <button type="button" className={mainStyles.button}>
-            Оставить заявку
-          </button>
+          <Button caption="Оставить заявку" />
         </div>
       </div>
       <IndividualPlan

@@ -21,6 +21,8 @@ const plans = [
     priceMonth: "2000",
     terms: null,
     buttonName: "Оставить заявку",
+    buttonHighlighted: true,
+    background: true,
   },
   {
     title:
@@ -36,6 +38,8 @@ const plans = [
     priceMonth: null,
     terms: null,
     buttonName: "Создать опрос",
+    buttonHighlighted: false,
+    background: false,
   },
   {
     title:
@@ -55,6 +59,8 @@ const plans = [
     priceMonth: "1667",
     terms: null,
     buttonName: "Оставить заявку",
+    buttonHighlighted: false,
+    background: false,
   },
   {
     title: "Индивидуальный",
@@ -65,14 +71,20 @@ const plans = [
     terms:
       "Оставьте заявку, если вам нужен большой объем, API или готовая интеграция. Стоимость рассчитаем исходя из ваших задач.",
     buttonName: "Оставить заявку",
+    buttonHighlighted: false,
+    background: false,
   },
 ];
 
 function App() {
-  const [width, setWidth] = useState(window.innerWidth > BREAKPOINT_L);
+  const [isLargeScreen, checkScreen] = useState(
+    window.innerWidth > BREAKPOINT_L,
+  );
 
   useEffect(() => {
-    const handleResizeWindow = () => setWidth(window.innerWidth > BREAKPOINT_L);
+    const handleResizeWindow = () =>
+      // eslint-disable-next-line implicit-arrow-linebreak
+      checkScreen(window.innerWidth > BREAKPOINT_L);
 
     window.addEventListener("resize", handleResizeWindow);
 
@@ -85,7 +97,7 @@ function App() {
     <div className={styles.wrapper}>
       <h1 className={styles.heading}>Тарифы</h1>
 
-      {width ? (
+      {isLargeScreen ? (
         <TableComponent />
       ) : (
         <ul className={styles.list}>
@@ -100,6 +112,8 @@ function App() {
                 price={plan.price}
                 priceMonth={plan.priceMonth}
                 buttonName={plan.buttonName}
+                buttonHighlighted={plan.buttonHighlighted}
+                background={plan.background}
               />
             </li>
           ))}

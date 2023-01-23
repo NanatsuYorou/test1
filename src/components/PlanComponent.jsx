@@ -1,9 +1,10 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable react/prop-types */
+
 import React from "react";
+import clsx from "clsx";
 import IndividualPlan from "./IndividualPlan";
 import planStyles from "../styles/css/planComponent.module.css";
-import mainStyles from "../styles/css/main.module.css";
+import Button from "./Button";
 
 export default function PlanComponent({
   title,
@@ -13,17 +14,25 @@ export default function PlanComponent({
   priceMonth,
   terms,
   buttonName,
+  buttonHighlighted,
+  background,
 }) {
   if (titleLetter === "") {
     return (
       <IndividualPlan title={title} terms={terms} buttonName={buttonName} />
     );
   }
+
   return (
-    <div className={planStyles.container}>
+    <div
+      className={clsx(
+        planStyles.container,
+        background && planStyles.background,
+      )}
+    >
       <header className={planStyles.title}>
         <span className={planStyles.circle}>{titleLetter}</span>
-        <p>{title}</p>
+        <p className={planStyles.title_text}>{title}</p>
       </header>
       <ul className={planStyles.list}>
         {prosList.map((pros) => (
@@ -39,17 +48,27 @@ export default function PlanComponent({
         {price !== null && (
           <>
             <div className={planStyles.price}>
-              {price !== null && <p>{price} руб.</p>}
-              {priceMonth !== null && <p>{priceMonth} руб./месяц</p>}
+              {price !== null && (
+                <p
+                  className={`${planStyles.price_text}  ${planStyles.price_full}`}
+                >
+                  {price} руб.
+                </p>
+              )}
+              {priceMonth !== null && (
+                <p
+                  className={`${planStyles.price_text}  ${planStyles.price_month}`}
+                >
+                  {priceMonth} руб./месяц
+                </p>
+              )}
             </div>
             <div className={planStyles.btnContainer}>
-              <button
-                type="button"
-                className={mainStyles.button}
+              <Button
+                caption={buttonName}
                 id={titleLetter}
-              >
-                {buttonName}
-              </button>
+                isBtnHighlighted={buttonHighlighted}
+              />
             </div>
           </>
         )}

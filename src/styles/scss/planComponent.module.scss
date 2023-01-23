@@ -1,3 +1,7 @@
+.background {
+  background: linear-gradient(180deg, #e8eeff 0%, #c2f6ff 100%), #f9fbff;
+}
+
 .container {
   position: relative;
   background-color: #fff;
@@ -21,9 +25,9 @@
   line-height: 20px;
   &Absolute {
     position: relative;
-    padding: 20px 0 10px 0;
+    padding: 15px 0;
     grid-area: titleAbsolute;
-    p {
+    &_text {
       font-family: "Proxima Nova Condensed";
       position: absolute;
       top: 27px;
@@ -49,8 +53,8 @@
 }
 
 .terms {
-  padding: 0 0 60px 0;
   grid-area: terms;
+  padding-bottom: 60px;
 }
 .price {
   width: 120px;
@@ -60,17 +64,17 @@
   text-align: left;
   padding-right: 10px;
   padding-left: 10px;
-  p {
+  &_text {
     font-family: "Proxima Nova Condensed";
     font-size: 24px;
     line-height: 22px;
     color: #333333;
   }
-  p:nth-child(1) {
+  &_full {
     font-weight: 700;
     font-size: 24px;
   }
-  p:nth-child(2) {
+  &_month {
     font-size: 14px;
   }
 }
@@ -106,7 +110,6 @@
   flex-direction: column;
   padding-left: 20px;
   & > .footer {
-    padding-top: 2px;
     width: 247px;
     margin: 0 auto;
   }
@@ -130,11 +133,14 @@
       "title ."
       "g_list footer";
   }
+  .terms {
+    padding-bottom: 0px;
+  }
   .title {
     grid-area: title;
     width: 350px;
     padding-bottom: 32px;
-    & p {
+    &_text {
       padding-top: 5px;
       padding-left: 5px;
     }
@@ -165,8 +171,8 @@
     grid-template-columns: auto 50px 150px;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
-      "titleAbsolute . footer"
-      "terms . .";
+      "titleAbsolute . ."
+      "terms . footer";
     width: 940px;
     height: 189px;
     box-sizing: border-box;
@@ -189,7 +195,7 @@
     }
   }
   .titleAbsolute {
-    p {
+    &_text {
       font-size: 22px;
       left: 18px;
     }
