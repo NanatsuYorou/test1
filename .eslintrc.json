@@ -22,6 +22,7 @@
             "error",
             "double"
         ],
+        "react/prop-types" : ["error", "disable"],
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "plugin:react/jsx-runtime": 0
     }
