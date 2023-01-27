@@ -4,9 +4,9 @@
   grid-template-rows: 2fr auto 2fr;
   grid-template-columns: 240px 225px 242px 225px;
   grid-template-areas:
-    ". xs m l"
-    "pros xsUl mUl lUl"
-    ". xsBtn mBtn lBtn";
+    ". titleXS titleM titleL"
+    "pros termsXS termsM termsL"
+    ". btnContainerXS btnContainerM btnContainerL";
   border: 1px solid #d4eaff;
   width: 940px;
   margin: 0 auto;
@@ -24,40 +24,46 @@
 }
 
 .letter {
-  font-family: "Proxima Nova Condensed";
+  font-family: "Proxima Nova Condensed", Arial, sans-serif;
   font-size: 22px;
   line-height: 26px;
   margin-bottom: 11px;
   margin-right: 4px;
 }
 
-.xsTitle {
-  text-align: center;
-  grid-area: xs;
-  border-left: 1px solid #d4eaff;
-}
-.xsUl {
-  grid-area: xsUl;
-  border-left: 1px solid #d4eaff;
-}
-
 .title {
   position: relative;
   z-index: 2;
   font-weight: 700;
-  padding: 24px 17px 0 17px;
+  padding: 24px 13px 0 13px;
   border-bottom: 1px solid #d4eaff;
   padding-bottom: 15px;
   font-size: 13px;
   line-height: 20px;
+  text-align: center;
 }
 
-.mTitle {
-  text-align: center;
-  grid-area: m;
+.titleXS {
+  grid-area: titleXS;
 }
-.mUl {
-  grid-area: mUl;
+.titleM {
+  grid-area: titleM;
+}
+.titleL {
+  grid-area: titleL;
+}
+
+.terms {
+}
+
+.termsXS {
+  grid-area: termsXS;
+}
+.termsM {
+  grid-area: termsM;
+}
+.termsL {
+  grid-area: termsL;
 }
 
 .bigColumn {
@@ -76,34 +82,6 @@
   }
 }
 
-.lTitle {
-  text-align: center;
-  grid-area: l;
-  margin-right: 5px;
-}
-.lUl {
-  grid-area: lUl;
-}
-
-.xsBtn {
-  grid-area: xsBtn;
-  border-left: 1px solid #d4eaff;
-}
-.mBtn {
-  grid-area: mBtn;
-}
-.button_highlighted {
-  color: #fff;
-  background-color: #e8178a;
-  &:hover {
-    background: #d1157c;
-    border: 1px solid #d1157c;
-  }
-}
-.lBtn {
-  grid-area: lBtn;
-}
-
 .li {
   display: flex;
   align-items: center;
@@ -119,18 +97,18 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 40px 0px 37px;
+  padding: 0 53px 0px 53px;
 }
 
 .positive {
-  background-image: url("../../images/check.svg");
+  background-image: url("../images/check.svg");
   background-size: 20px 15px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
 .negative {
-  background-image: url("../../images/cross.svg");
+  background-image: url("../images/cross.svg");
   background-size: 25px 25px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -148,8 +126,18 @@
   padding: 33px 35px 35px 35px;
 }
 
+.btnContainerXS {
+  grid-area: btnContainerXS;
+}
+.btnContainerM {
+  grid-area: btnContainerM;
+}
+.btnContainerL {
+  grid-area: btnContainerL;
+}
+
 .price {
-  font-family: "Proxima Nova Condensed";
+  font-family: "Proxima Nova Condensed", Arial, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -160,7 +148,7 @@
   padding-left: 7px;
 }
 .monthPrice {
-  font-family: "Proxima Nova Condensed";
+  font-family: "Proxima Nova Condensed", Arial, sans-serif;
   font-weight: 400;
   font-size: 14px;
   text-align: center;

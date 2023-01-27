@@ -2,8 +2,7 @@
 
 import React from "react";
 import clsx from "clsx";
-import IndividualPlan from "./IndividualPlan";
-import planStyles from "../styles/css/planComponent.module.css";
+import planStyles from "./planComponent.module.scss";
 import Button from "./Button";
 
 export default function PlanComponent({
@@ -12,22 +11,15 @@ export default function PlanComponent({
   prosList,
   price,
   priceMonth,
-  terms,
   buttonName,
   buttonHighlighted,
-  background,
+  background
 }) {
-  if (titleLetter === "") {
-    return (
-      <IndividualPlan title={title} terms={terms} buttonName={buttonName} />
-    );
-  }
-
   return (
     <div
       className={clsx(
         planStyles.container,
-        background && planStyles.background,
+        background && planStyles.background
       )}
     >
       <header className={planStyles.title}>
